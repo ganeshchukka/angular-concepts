@@ -1,0 +1,70 @@
+<h3 class="text-success">Products Details</h3>
+<div class="table-responsive">
+  <table class="table  table-bordered">
+    <thead>
+      <tr>
+        <th>p_id</th>
+        <th>P_Name</th>
+        <th>P_cost</th>
+         </tr>
+    </thead>
+     <tbody>
+     <tr *ngFor = "let y of products">
+        <td>{{y.p_id}}</td>
+     <td>{{y.p_name}}</td>
+        <td>{{y.p_cost}}</td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+<!-- <h3>Data from Products {{products |json }}</h3> -->
+ <h3 class="text-primary">Insert Product</h3>
+ <!-- <form> if i use form here i need to specify the name to all feilds becoz i am mention ngModel -->
+ <!-- <div class="form-group"> -->
+    <label class="control-label">p_id:</label>
+    <input type="number" [(ngModel)]="id"> 
+    <label class="control-label">Insert p_name:</label><input type="text" [(ngModel)]="name">
+    <label class="control-label">Insert p_cost:</label><input type="number" [(ngModel)]="cost">
+    <button class="btn btn-primary" (click)="insertData({'p_id':id,'p_name':name,'p_cost':cost})">Insert</button>
+    <!-- </div> -->
+  <h4>Inserted Status is:{{insertStatus | json}}</h4>
+  <h3 class="text-success">Update Product</h3>
+  <label class="control-label">Update p_id:</label><input type="number" [(ngModel)]="id1"> 
+  <label class="control-label">Update p_name:</label><input type="text" [(ngModel)]="name1">
+  <label class="control-label">Update p_cost:</label><input type="number" [(ngModel)]="cost1">
+    <button class="btn btn-success" (click)="updateData({'p_id':id1,'p_name':name1,'p_cost':cost1})">Update</button>
+  <h4>Update Status is:{{updateStatus | json}}</h4>
+
+  <h3 class="text-danger">Dalete Product</h3>
+  <label class="control-label">Delete p_id:</label><input type="number" [(ngModel)]="id2"> 
+  <button class="btn btn-danger" (click)="deleteData({'p_id':id2})">Delete</button>
+  <h4>delete Status is:{{deleteStatus | json}}</h4>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form>
+      <div class="form-group" [class.has-error]="insert.invalid&&insert.touched">
+        
+        <label for="id" class="control-label">Insert p_id</label>
+        
+        <span class="help-block" *ngIf="insert.invalid&&insert.touched"> Please Insert Id</span>
+        <label for="name" class="control-label">Insert P_name</label>
+        <input type="text" name="name"  required  [(ngModel)]="name" #insert="ngModel"> 
+        <span class="help-block" *ngIf="insert.invalid&&insert.touched"> Please Insert p_name</span>
+        <label for="cost" class="control-label">Insert p_Cost</label>
+        <input type="number" name="cost"  required  [(ngModel)]="cost" #insert="ngModel"> 
+        <span class="help-block" *ngIf="insert.invalid&&insert.touched"> Please Insert Id</span>
+        <button class="btn btn-success" (click)='insertData({'p_id':id,'p_name':name,p_cost:cost})'>Insert</button>
+        <h3>Inserted Status is: {{insertStatus | json}}</h3>
+      </div>
+      </form> -->

@@ -1,0 +1,78 @@
+<div class="row">
+   <div class="col-md-offset-2 col-md-8">
+      <form [formGroup]="employeeForm" (ngSubmit)="saveEmployee(employeeForm)">
+      <div class="panel panel-primary">
+         <div class="panel-heading">
+            <h3 class="panel-title">Create Employee</h3>
+         </div>
+         <div class="panel-body">
+            <div class="form-group">
+               <label for="fname" class="control-label">FullName</label>
+               <input type="text" formControlName="fname"  id="fname" class=
+                  "form-control">
+               <span  class="text-danger" *ngIf="employeeForm.controls['fname'].hasError('required') && employeeForm.controls['fname'].touched">Full name is required</span>
+               <!-- <span  class="text-danger" *ngIf="employeeForm.controls['fname'].hasError('pattern')"> Number are not allowed </span> -->
+               <span class="text-danger" *ngIf="employeeForm.controls['fname'].hasError('minlength')">Please Enter Minimum Three charecters</span>
+               <span class="text-danger" *ngIf="employeeForm.controls['fname'].hasError('maxlength')">Maximum 10 charecters allowed</span>
+            </div>
+            <div class="form-group">
+               <label for="email" class="control-label">Email</label>
+               <input type="email" formControlName="email" id="email" class="form-control">  
+               <span class="text-danger" *ngIf="employeeForm.controls['email'].hasError('required') && employeeForm.controls['email'].touched">Email is Required</span>
+            </div>
+            <div class="form-group">
+               <label for="ph-no" class="control-label">phoneNumber</label>
+               <input type="tel" formControlName="phno" id="ph-no" class="form-control"> 
+               <span class="text-danger" *ngIf="employeeForm.controls['phno'].hasError('required') && employeeForm.controls['phno'].touched">Phone Number is Required</span>
+               <br>
+               <span class="text-danger" *ngIf="employeeForm.controls['phno'].hasError('pattern')">Phone enter only Number</span>
+               <span class="text-danger" *ngIf="employeeForm.controls['phno'].hasError('minlength')">Enter Minmum 10 numbers</span>        
+            </div>
+            <div class="form-group">
+               <label for="dob">DateOfBirth</label>
+               <input type="date" formControlName="dob" id="dob" class="form-control"> 
+            </div>
+            <div class="form-group">
+               <label for="cr">ContactReferance</label>
+               <input type="text" formControlName="cr" id="cr" class="form-control"> 
+            </div>
+            <span class="text-danger" *ngIf="employeeForm.controls['cr'].hasError('required') && employeeForm.controls['cr'].touched">Contact Referance  is Required</span>
+            <div class="form-group">
+               <label for="password" class="control-label">Password</label>
+               <input type="password" formControlName="password" required id="pswrd" class="form-control"> 
+            </div>
+            <span class="text-danger" *ngIf="employeeForm.controls['password'].hasError('required') && employeeForm.controls['password'].touched">Password  is Required</span>
+            <span class="text-danger" *ngIf="employeeForm.controls['password'].hasError('minlength')">Please Enter password Minimum 8 charecters</span>
+            <div class="form-group">
+               <label for="confirmPassword" class="control-label"> Confirm Password</label>
+               <input type="password" formControlName="confirmPassword" appConfirmEqualValidator="password" required id="cnfpswrd" class="form-control"> 
+               <span class="text-danger" *ngIf="employeeForm.controls['confirmPassword'].hasError('required') && employeeForm.controls['confirmPassword'].touched">ConfirmPassword is Required</span>
+            </div>
+            <div class="form-group">
+               <label class="control-label" for="dp">Department</label>
+               <select id ="Department" formControlName="dp"  appCustomDirective class="form-control">
+                  <option [ngValue]="null" disabled>Select any Department</option>
+                  <option *ngFor= "let dept of departments" [ngValue]="dept">{{dept.name}}</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label  class="radio-inline" class="control-label">Gender</label>&nbsp;
+               <input type="radio" value="male" formControlName="gender" required id="m">Male &nbsp;&nbsp;
+               <input type="radio" formControlName="gender" value="female"  required id="f">FeMale
+               <span class="text-danger" *ngIf="employeeForm.controls['gender'].hasError('required')">please select gender</span>
+            </div>
+            <div class="form-group">
+               <label class="radio-inline">IsActive</label>&nbsp;
+               <input type="radio" formControlName="ia" value="yes" id="yes">Yes &nbsp; 
+               <input type="radio" formControlName="ia" value="no" id="no"> No
+            </div>
+         </div>
+         <div class="panel-footer">
+            <button class="btn btn-success" type="submit" [disabled] = "employeeForm.invalid">Save</button> &nbsp;
+            <button class="btn btn-primary" type="reset">Cancel</button>
+         </div>
+      </div>
+      </form>
+   </div>
+</div>
+<h3>Angular Generates Form Model:{{employeeForm.value|json }}</h3>

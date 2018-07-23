@@ -1,0 +1,4 @@
+
+<h4 class="text-success">@Input Output</h4>
+<app-child [p_id]="x.p_id" [p_name]="x.p_name" [p_cost]="x.p_cost" (sendData)="clickMe($event)"
+*ngFor="let x of products"></app-child>

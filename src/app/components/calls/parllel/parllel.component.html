@@ -1,0 +1,50 @@
+<div class="table-responsive">
+<table class="table  table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>country</th>
+       </tr>
+  </thead>
+   <tbody>
+   <tr *ngFor = "let y of res_one?.records">
+      <td>{{[y.Name]}}</td>
+   <td>{{y.City}}</td>
+      <td>{{y.Country}}</td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="table-responsive">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Captial</th>
+      <th>flag</th>
+      <th>currencies</th>
+      <th>Region</th>
+      <th>Population</th>
+      <th>Borders</th>
+       <th>Native Name</th>
+       <!-- <th>languages</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let x of res_two">
+      <td>{{x.name}}</td>
+      <td>{{x.capital}}</td>
+      <td><img src={{x.flag}} width="100px" height="100px"></td>
+      <td>{{x.currencies[0].code}}</td>
+      <td>{{x.region}}</td>
+      <td>{{x.population}}</td>
+      <td>{{x.borders[0]}}</td>
+      <td>{{x.nativeName}}</td>
+      <!-- <td>{{x.languages[3]}}</td> -->
+    </tr>
+ </tbody>
+ </table>
+ </div>
+ <h3>Customers Data {{res_one | json}}</h3>
+ <h3>Countries Data {{res_two | json}}</h3>

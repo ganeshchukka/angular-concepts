@@ -1,0 +1,19 @@
+<h3 class="text-success">Products Details</h3>
+<div class="table-responsive">
+  <table class="table  table-bordered">
+    <thead>
+      <tr>
+        <th>p_id</th>
+        <th>P_Name</th>
+        <th>P_cost</th>
+         </tr>
+    </thead>
+     <tbody>
+     <tr *ngFor = "let y of products">
+        <td>{{y.p_id}}</td>
+     <td>{{y.p_name}}</td>
+        <td>{{y.p_cost}}</td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
