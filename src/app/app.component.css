@@ -1,0 +1,10 @@
+.main_nav{
+background-color: blue;
+}
+.navbar-nav > li > a{
+    color: #fff;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color:tomato;
+}

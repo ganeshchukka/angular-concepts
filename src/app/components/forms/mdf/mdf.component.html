@@ -1,0 +1,99 @@
+<!-- <form [formGroup] = "userDetails" (ngSubmit)="clikMe()" >
+<div class="form-group">
+    <label>Your Name</label> &nbsp;
+    <input type="text"
+     formControlName="name"
+    required>
+    <span *ngIf="useDetails.controls['name'].hasError('required')" class="alert alert-danger">
+        Can't left this field
+    </span>
+    </div>
+<div class="form-group">
+        <button class="btn btn-success btn-lg" type="submit">Submit</button>
+        <button class="btn btn-default btn-lg" type="reset">Cancel</button>
+     </div>
+</form> -->
+
+    <form [formGroup]="userDetails" (ngSubmit)="clickMe()">
+      <!-- First Name-->
+      <div class="form-group">
+        <label>First Name.</label>
+        <input type="text"
+
+               formControlName="fname"
+               required>
+               <span *ngIf="userDetails.controls['fname'].hasError('required')"
+     class="alert alert-danger">
+        ***can't left blank***
+     </span>
+     <span *ngIf="userDetails.controls['fname'].hasError('minlength')"
+           class="alert alert-danger">
+          ***Minimum 6 Characters Are Required*** 
+    </span>
+    <span *ngIf="userDetails.controls['fname'].hasError('maxlength')"
+           class="alert alert-danger">
+          ***Maximum 9 Characters Are Allowed*** 
+    </span>
+      </div>
+  
+      <!-- Last Name-->
+      <div class="form-group">
+        <label>Last Name.</label>
+        <input type="text"
+                    required
+               formControlName="lname">
+      </div>
+  
+      <!-- Email -->
+      <div class="form-group">
+        <label>Email.</label>
+        <input type="email"
+
+               formControlName="uemail">
+      </div>
+  
+      <!-- SubGroup-->
+      <div class="form-group" formGroupName="addr">
+        <!-- City -->
+        <div class="form-group">
+          <label>City</label>
+          <input type="text"
+
+                 formControlName="ucity">
+        </div>
+  
+        <!-- Address Lane -->
+        <div class="form-group">
+          <label>Address Lane.</label>
+          <input type="text"
+                 formControlName="uaddr">
+        </div>
+      </div>
+  
+      <!-- Gender -->
+      <div class="form-group">
+        <label>Gender.</label>
+        <input type="radio"  formControlName="gender" value="male">Male
+        <input type="radio"  formControlName="gender" value="female">Female
+      </div>
+  
+      <!-- Country -->
+      <div class="form-group">
+          <label>Country.</label>
+          <select  formControlName="ucountry">
+            <option value="india">India</option>
+            <option value="uk">London</option>
+            <option value="japan">Japan</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+          </select>
+      </div>
+  
+      <!-- Submit Button-->
+      <div class="form-group">
+        <input type="submit" class="btn btn-success">
+        <input type="reset" class="btn btn-default">
+      </div>
+  
+    </form>
+  

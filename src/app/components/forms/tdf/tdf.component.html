@@ -1,0 +1,27 @@
+<form #employee="ngForm" (ngSubmit)="register(employee.value)">
+        <div class="form-group">
+           <label class="label-control"> Enter Your Name:</label>&nbsp;
+           <input type="text"
+              name="nme"
+              ngModel
+              placeholder="enter your name"
+              #nme="ngModel"
+              required>
+           <span [hidden]="nme.valid" class="alert alert-danger">Please enter your name</span>
+        </div>
+        <div class="form-group">
+           <label class="label-control">Enter Your Email:&nbsp;</label>
+           <input type="email" required name="email" ngModel placeholder="enter yout mail Id"> 
+        </div>
+        <!-- subgroup -->
+        <div class="form-group" ngModelGroup="addr">
+           <div class="form-group">
+              <label>City</label>
+              <input type="text" name="city" placeholder="enter your city" ngModel>
+           </div>
+        </div>
+        <div class="form-group">
+           <button class="btn btn-success btn-lg" type="submit">Submit</button>
+           <button class="btn btn-default btn-lg" type="reset">Cancel</button>
+        </div>
+</form>

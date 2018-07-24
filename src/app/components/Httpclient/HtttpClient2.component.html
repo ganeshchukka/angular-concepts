@@ -1,0 +1,6 @@
+<h5><b>Enter some text Below Input field</b></h5>
+<input type="text" [(ngModel)] ="uppercase">
+<button type="submit" (click)="send({'message':uppercase})" value="send">Send</button>
+<p>OutPut is{{result_two | json}}</p><br>
+<h4><a routerLink="countries">GetCountries</a></h4>
+<router-outlet></router-outlet>
