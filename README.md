@@ -1,4 +1,4 @@
-# Angularapp
+# Angular Sample Project
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
@@ -18,24 +18,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-# In this project providing some Angular Concepts Examples:-
-
-# The concepts are
-Components
-Services
-Http Post Request
-Series and Parallel calls
-CRUD operations with Mysql Database
-Token Genretion
-Getting Data from static file
-MongoDb Integration with Nodejs
-SPA (single page applications)
-Nested routings
-Route guards
-HttpClient
-Php Integration
-Pipes
-Communications B/W components
-Forms(Template and Modern Driven Forms)
-Directives 18)Unit Testing
